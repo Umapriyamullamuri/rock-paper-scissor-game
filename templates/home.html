@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK-PAPER-SISSOR</title>
+</head>
+<body>
+    <h1> GAME HOME PAGE </h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label>SELECT YOUR MOVE : </label>
+        <br> <br>
+        <input type ='radio' name="selectedValue" value="ROCK" required> ROCK <br>
+        <input type ='radio' name="selectedValue" value="PAPER" required> PAPER <br>
+        <input type ='radio' name="selectedValue" value="SCISSOR" required> SCISSOR <br>
+        <input type="submit" value="PLAY">
+    </form>
+    {% if result %}
+        <h2> Result : {{result}} </h2>
+        <p> Your Choice : {{person}}</p>
+        <p> Computer Choice : {{computer}}</p>
+    {% endif %}
+</body>
+</html>
